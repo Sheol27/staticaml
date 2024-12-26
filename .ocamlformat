@@ -1,0 +1,4 @@
+profile = ocamlformat
+
+version = ignore
+version-check = false

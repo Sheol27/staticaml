@@ -1,4 +1,5 @@
 profile = ocamlformat
+margin = 100
 
 version = ignore
 version-check = false

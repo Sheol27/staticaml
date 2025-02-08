@@ -7,9 +7,9 @@
 (source
  (github username/reponame))
 
-(authors "Author Name <author@example.com>")
+(authors "Sheol27")
 
-(maintainers "Maintainer Name <maintainer@example.com>")
+(maintainers "Sheol27")
 
 (license LICENSE)
 
@@ -17,10 +17,7 @@
 
 (package
  (name staticaml)
- (synopsis "A short synopsis")
- (description "A longer description")
+ (synopsis "Statistics in OCaml")
+ (description "Naive implementation of statistics concepts in OCaml")
  (depends ocaml)
- (tags
-  ("add topics" "to describe" your project)))
-
-; See the complete stanza docs at https://dune.readthedocs.io/en/stable/reference/dune-project/index.html
+ )

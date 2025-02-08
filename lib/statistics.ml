@@ -4,14 +4,13 @@ let evaluate_probability (values : float list) (conditions : (float -> bool) lis
   float_of_int (Utils.count_true results) /. float_of_int (List.length values)
 
 let cumulative_distribution_function (target : float) (values : float list) =
-  let[@tail_mod_cons] rec cumulative_distribution_function' (target : float) (values : float list)
-      (accumulator : float) =
+  let[@tail_mod_cons] rec aux (target : float) (values : float list) (accumulator : float) =
     match target with
     | 0.0 ->
         accumulator
     | _ ->
         let is_equal_to_x = Utils.is_equal_to target in
         let probability = evaluate_probability values [is_equal_to_x] in
-        cumulative_distribution_function' (target -. 1.0) values (accumulator +. probability)
+        aux (target -. 1.0) values (accumulator +. probability)
   in
-  cumulative_distribution_function' target values 0.0
+  aux target values 0.0
